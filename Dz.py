@@ -29,22 +29,22 @@
 
 """
 
-n = int(input("Длина массива: "))
-a = []
-for i in range(n):
-    a.append(int(input("Число массива: ")))
-
-x = int(input("Число, к которому ищем ближайшее: "))
-
-for i in range(n):
-    if i == 0:
-        near = a[i]
-        differens = abs(x - a[i])
-    elif abs(x - a[i]) < differens:
-        near = a[i]
-        differens = abs(x - a[i])
-
-print(near)
+# n = int(input("Длина массива: "))
+# a = []
+# for i in range(n):
+#     a.append(int(input("Число массива: ")))
+#
+# x = int(input("Число, к которому ищем ближайшее: "))
+#
+# for i in range(n):
+#     if i == 0:
+#         near = a[i]
+#         differens = abs(x - a[i])
+#     elif abs(x - a[i]) < differens:
+#         near = a[i]
+#         differens = abs(x - a[i])
+#
+# print(near)
 
 """
 Задача 3: В настольной игре Скрабл (Scrabble) каждая буква имеет определенную
@@ -69,3 +69,13 @@ print(near)
 английские, либо только русские буквы.
 """
 
+d = {'A': 1, 'E': 1, 'I': 1, 'O': 1, 'U': 1, 'L': 1, 'N': 1, 'S': 1, 'T': 1,
+     'R': 1, 'D': 2, 'G': 2, 'B': 3, 'C': 3, 'M': 3, 'P': 3, 'F': 4, 'H': 4,
+     'V': 4, 'W': 4, 'Y': 4, 'K': 5, 'J': 8, 'X': 8, 'Q': 10, 'Z': 10}
+
+word = input()
+word = list(word)
+a = 0
+for el in word:
+    a += d.get(el)
+print(a)
